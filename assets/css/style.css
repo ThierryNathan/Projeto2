@@ -1,0 +1,16 @@
+body
+{
+    padding: 2rem;
+}
+
+#lista-de-animais
+{
+    /* Mobile first */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1rem;
+}
+
+
+
+
