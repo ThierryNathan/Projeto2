@@ -11,6 +11,12 @@ body
     gap: 1rem;
 }
 
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
 
 
 
