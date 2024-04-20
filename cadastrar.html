@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastros dos Bicho</title>
     <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
     <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
     <link href="https://unpkg.com/nes.css/css/nes-core.min.css" rel="stylesheet" />
@@ -10,8 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets\css\style.css">
-    <script src="js\cadastrar.js"></script>
-    <title>Cadastros dos Bicho</title>
+    <script src="js\cadastrar.js" defer></script>
 </head>
 
 <body>
@@ -25,7 +25,6 @@
             <span id="titulo-erro" class="nes-text is-error"></span>
         </div>
 
-        <!-- remover???? -->
         <div class="nes-field">
             <label for="descricao">Descrição</label>
             <textarea id="descricao" class="nes-textarea"></textarea>
@@ -40,10 +39,12 @@
         <div class="nes-field">
             <label for="poder">Poder</label>
              <input type="number" id="poder" class="nes-input">
+             <span id="poder-erro" class="nes-text is-error"></span>
          </div> 
         <div class="nes-field">
             <label for="vigor">Vigor</label>
             <input type="number" id="vigor" class="nes-input">
+            <span id="vigor-erro" class="nes-text is-error"></span>
         </div>
 
         <div class="acoes">
