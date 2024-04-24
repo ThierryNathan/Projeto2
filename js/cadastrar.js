@@ -13,9 +13,17 @@ document.querySelector("#btn-cadastrar").addEventListener("click", () => {
 
     validar(bicho)
 
-    console.log(bicho)
+    salvar(bicho)
 
 })
+
+function salvar(bicho)
+{
+    const bichos = JSON.parse(localStorage.getItem("bichos")) || [] 
+    bichos.push(bicho)
+    localStorage.setItem("bichos" , JSON.stringify(bichos))
+    window.location.href = "index.html"
+}
 
 function validar(bicho)
 {
