@@ -40,14 +40,15 @@ function card(bicho)
         <progress class="nes-progress is-success" value="50" max="100"></progress>
         
         <!-- Esta seção só será exibida no momento em que o usuário clicar no botão de editar ou durante a criação de um novo animal. -->
-        <button type="button" class="nes-btn is-error">apagar</button>
-        <button type="button" class="nes-btn is-primary">-</button>
-        <button type="button" class="nes-btn is-primary">+</button>   
+        <button onClick="apagar('${bicho.id}')" type="button" class="nes-btn is-error">apagar</button>
+        <button onClick="dec('${bicho.id}')"type="button" class="nes-btn is-primary">-</button>
+        <button onClick="inc('${bicho.id}')"type="button" class="nes-btn is-primary">+</button>   
 
         </div>
     `  
 
     const card = document.createElement("div")
+    card.id = bicho.id
     card.innerHTML = cardBicho
     document.querySelector("#lista-de-animais").appendChild(card)
 }

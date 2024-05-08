@@ -4,6 +4,7 @@ document.querySelector("#btn-cadastrar").addEventListener("click", () => {
 
     const bicho = 
     {
+        id: "id_" + new Date().getTime(),
         titulo: form.titulo.value,
         descricao: form.descricao.value,
         vida: form.vida.value,
