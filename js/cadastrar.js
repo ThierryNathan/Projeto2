@@ -1,7 +1,6 @@
 document.querySelector("#btn-cadastrar").addEventListener("click", () => {
 
     const form = document.querySelector("form")
-
     const bicho = 
     {
         id: "id_" + new Date().getTime(),
@@ -12,9 +11,10 @@ document.querySelector("#btn-cadastrar").addEventListener("click", () => {
         vigor: form.vigor.value
     }
 
-    validar(bicho)
-
-    salvar(bicho)
+    const validado = validar(bicho);
+    if (validado) {
+        salvar(bicho);
+    }
 
 })
 
@@ -29,36 +29,44 @@ function salvar(bicho)
 function validar(bicho)
 {
     limparErros()
+    let validado = true;
 
-    if (bicho.titulo.trim() == "")
-    {
-        document.querySelector("#titulo").classList.add("is-error")
-        document.querySelector("#titulo-erro").innerText = "o título é obrigatório"
-    }
+        if (bicho.titulo.trim() == "")
+        {
+            document.querySelector("#titulo").classList.add("is-error")
+            document.querySelector("#titulo-erro").innerText = "o título é obrigatório"
+            validado = false
+        }
 
-    if (bicho.descricao.trim() == "" || bicho.descricao.length < 10)
-    {
-        document.querySelector("#descricao").classList.add("is-error")
-        document.querySelector("#descricao-erro").innerText = "a descrição deve ter pelo menos 10 caracteres"
-    }
-    
-    if (bicho.vida <= 0)
-    {
-        document.querySelector("#vida").classList.add("is-error")
-        document.querySelector("#vida-erro").innerText = "vida deve ser maior que zero"
-    }
+        if (bicho.descricao.trim() == "" || bicho.descricao.length < 10)
+        {
+            document.querySelector("#descricao").classList.add("is-error")
+            document.querySelector("#descricao-erro").innerText = "a descrição deve ter pelo menos 10 caracteres"
+            validado = false
+        }
+        
+        if (bicho.vida <= 0)
+        {
+            document.querySelector("#vida").classList.add("is-error")
+            document.querySelector("#vida-erro").innerText = "vida deve ser maior que zero"
+            validado = false
+        }
 
-    if (bicho.poder <= 0)
-    {
-        document.querySelector("#poder").classList.add("is-error")
-        document.querySelector("#poder-erro").innerText = "poder deve ser maior que zero"
-    }
+        if (bicho.poder <= 0)
+        {
+            document.querySelector("#poder").classList.add("is-error")
+            document.querySelector("#poder-erro").innerText = "poder deve ser maior que zero"
+            validado = false
+        }
 
-    if (bicho.vigor <= 0)
-    {
-        document.querySelector("#vigor").classList.add("is-error")
-        document.querySelector("#vigor-erro").innerText = "vigor deve ser maior que zero"
-    }
+        if (bicho.vigor <= 0)
+        {
+            document.querySelector("#vigor").classList.add("is-error")
+            document.querySelector("#vigor-erro").innerText = "vigor deve ser maior que zero"
+            validado = false
+        }
+
+        return validado;
 }
 
 
